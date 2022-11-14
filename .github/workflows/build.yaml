@@ -9,12 +9,11 @@ on:
       - testing
       - CI_CD
       - feature/**
-      
     paths:
-      - app/**
-      - backend/**
-      - server/**
+      - src/**
+      - test/**
       - .github/**
+  
   pull_request:
     branches: 
       - main
