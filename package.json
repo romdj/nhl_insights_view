@@ -1,16 +1,21 @@
 {
-  "name": "myapp",
+  "name": "nhl_insights_view",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "svelte": "^3.52.0",
-    "vite": "^3.2.3"
+    "vite": "^3.2.3",
+    "vitest": "^0.25.2"
+  },
+  "dependencies": {
+    "svelte-table": "^0.5.2"
   }
 }
