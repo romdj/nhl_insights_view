@@ -1,5 +1,6 @@
 <script>
     import SvelteTable from "svelte-table";
+    import {sveltify} from "../functions/utils.mjs";
     let name = "NHL Insights";
     const sampleStandingsData = [
         {
@@ -645,6 +646,9 @@
     ];
     const data = sampleStandingsData;
     const columns = Object.keys(sampleStandingsData[0]);
+    console.log(columns);
+    console.log(sveltify(data));
+
 
     let sortBy = "rank";
     let sortOrder = 1;
@@ -663,7 +667,7 @@
 <div class="row">
     <SvelteTable
         {columns}
-        rows={data}
+        rows={sveltify(data)}
         bind:sortBy
         bind:sortOrder
         classNameTable={["table table-striped"]}
