@@ -1,41 +1,41 @@
-name: front-end CI
+# name: front-end CI
 
-on: 
-  push:
-    branches:
-      - main
-      - dev
-      - staging
-      - testing
-      - CI_CD
-      - feature/**
-      - server*
-      - app*
+# on: 
+#   push:
+#     branches:
+#       - main
+#       - dev
+#       - staging
+#       - testing
+#       - CI_CD
+#       - feature/**
+#       - server*
+#       - app*
       
-    paths:
-    # Directories/Locations for which a new build is required when a change is detected
-      - app/**
-      - backend/**
-      - server/**
-      - .github/**
-  pull_request:
-    branches: 
-      - main
-      - dev
-      - staging
-      - testing
+#     paths:
+#     # Directories/Locations for which a new build is required when a change is detected
+#       - app/**
+#       - backend/**
+#       - server/**
+#       - .github/**
+#   pull_request:
+#     branches: 
+#       - main
+#       - dev
+#       - staging
+#       - testing
 
-jobs:
-  app:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Flutter action
-      uses: subosito/flutter-action@v2.6.1
-    - uses: actions/checkout@v3
-      with:
-        flutter-version: '3.0.5'
-        channel: 'stable'
-    - run: flutter --version
-      working-directory: ./app
-    - run: flutter test
-      working-directory: ./app
+# jobs:
+#   app:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Flutter action
+#       uses: subosito/flutter-action@v2.6.1
+#     - uses: actions/checkout@v3
+#       with:
+#         flutter-version: '3.0.5'
+#         channel: 'stable'
+#     - run: flutter --version
+#       working-directory: ./app
+#     - run: flutter test
+#       working-directory: ./app
