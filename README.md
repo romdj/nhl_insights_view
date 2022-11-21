@@ -5,7 +5,7 @@ More info on the [project management page](https://github.com/romdj/3point-game-
 
 
 
-## Svelte + Vite
+## Svelte + Vite Documentation - HowTo
 
 This template should help get you started developing with Svelte in Vite.
 
