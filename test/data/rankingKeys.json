@@ -1,0 +1,74 @@
+[
+    {
+        "key": "rank",
+        "exampleValue": 1
+    },
+    {
+        "key": "teamName",
+        "exampleValue": "Boston"
+    },
+    {
+        "key": "GP",
+        "exampleValue": 16
+    },
+    {
+        "key": "OfficialW",
+        "exampleValue": 14
+    },
+    {
+        "key": "RL",
+        "exampleValue": 2
+    },
+    {
+        "key": "OTL",
+        "exampleValue": 0
+    },
+    {
+        "key": "PTS",
+        "exampleValue": 28
+    },
+    {
+        "key": "P%",
+        "exampleValue": "Boston"
+    },
+    {
+        "key": "RW",
+        "exampleValue": 11
+    },
+    {
+        "key": "ROW",
+        "exampleValue": 13
+    },
+    {
+        "key": "GF",
+        "exampleValue": 65
+    },
+    {
+        "key": "GoalsAgainst",
+        "exampleValue": 35
+    },
+    {
+        "key": "Diff",
+        "exampleValue": "+30"
+    },
+    {
+        "key": "HOME",
+        "exampleValue": "9-0-0"
+    },
+    {
+        "key": "AWAY",
+        "exampleValue": "5-2-0"
+    },
+    {
+        "key": "S/O",
+        "exampleValue": "Boston"
+    },
+    {
+        "key": "Last10",
+        "exampleValue": "9-1-0"
+    },
+    {
+        "key": "Streak",
+        "exampleValue": "W4"
+    }
+]

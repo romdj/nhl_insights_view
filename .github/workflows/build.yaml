@@ -9,15 +9,11 @@ on:
       - testing
       - CI_CD
       - feature/**
-      - server*
-      - app*
-      
     paths:
-    # Directories/Locations for which a new build is required when a change is detected
-      - app/**
-      - backend/**
-      - server/**
+      - src/**
+      - test/**
       - .github/**
+  
   pull_request:
     branches: 
       - main
@@ -26,16 +22,18 @@ on:
       - testing
 
 jobs:
-  app:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-    - name: Flutter action
-      uses: subosito/flutter-action@v2.6.1
-    - uses: actions/checkout@v3
-      with:
-        flutter-version: '3.0.5'
-        channel: 'stable'
-    - run: flutter --version
-      working-directory: ./app
-    - run: flutter test
-      working-directory: ./app
+      - uses: actions/checkout@v3
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
