@@ -650,7 +650,7 @@
     // console.log(data);
 
     // console.log(Object.keys(sampleStandingsData[0]));
-    const columns = sveltifyColumn(Object.keys(sampleStandingsData[0]));
+    const columns = sveltifyColumn(Object.keys(sampleStandingsData[0]).map(item => ({key: item, exampleValue: sampleStandingsData[0][item]})));
     // console.log(columns);
     // console.log(sveltifyRow(data));
     const rows = sveltifyRow(data);

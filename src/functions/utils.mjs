@@ -14,7 +14,7 @@ export function sveltifyRow(data) {
                     key: itemKey,
                     sortable: Number.isInteger(item[itemKey]),
                     title: typeof item[itemKey] === 'string' ? item[itemKey].toUpperCase() : item[itemKey],
-                    'value': getFunction123(itemKey),
+                    'value': getValueFunction(itemKey),
                     // 'value': v => v.rank,
                 }
             };
@@ -29,12 +29,10 @@ export function sveltifyRow(data) {
 
 export function sveltifyColumn(data) {
    return data.map(item => ({
-        key: item,
-        sortable: false,
-        // sortable: Number.isInteger(item),
-        title: typeof item === 'string' ? item.toUpperCase() : item,
-        // value: v => v.rank,
-        value: getFunction123(item),
+        key: item.key,
+        sortable: Number.isInteger(item.exampleValue),
+        title: typeof item.key === 'string' ? item.key.toUpperCase() : item.key,
+        value: getValueFunction(item.key),
     }));
 }
 
@@ -54,7 +52,7 @@ export function sveltifyColumn(data) {
 // Add css class:
 // class: "text-center"
 
-function getFunction123(itemKey) {
+function getValueFunction(itemKey) {
     switch (itemKey) {
         case 'rank':
             return v => v.rank;
