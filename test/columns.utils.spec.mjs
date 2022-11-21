@@ -3,7 +3,7 @@ import { sveltifyColumn } from '../src/functions/utils';
 import keys from './data/rankingKeys.json';
 
 
-it.only('returns expected value', () => {
+it('returns expected value', () => {
     const expectedResult = [{
         key: "rank",
         title: "RANK",
@@ -111,19 +111,19 @@ it('returns expected value - whole ranking', () => {
         },
         {
           key: 'HOME',
-          sortable: true,
+          sortable: false,
           title: 'HOME',
           value: expect.anything(),
         },
         {
           key: 'AWAY',
-          sortable: true,
+          sortable: false,
           title: 'AWAY',
           value: expect.anything(),
         },
         {
           key: 'S/O',
-          sortable: true,
+          sortable: false,
           title: 'S/O',
           value: expect.anything(),
         },
