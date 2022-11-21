@@ -1,5 +1,5 @@
 import { it, expect, test, beforeAll } from 'vitest'
-import { sveltify } from '../src/functions/utils';
+import { sveltifyRow } from '../src/functions/utils';
 import ranking from './data/ranking.json';
 
 let simplifiedRanking1 = ranking;
@@ -24,7 +24,7 @@ it('returns expected value', () => {
             sortable: false,
         },
     }];
-    expect(sveltify([simplifiedRanking1.pop()])).toEqual(expectedResult);
+    expect(sveltifyRow([simplifiedRanking1.pop()])).toEqual(expectedResult);
 });
 
 it('returns expected value - simplified 1 team ranking', () => {
@@ -42,26 +42,11 @@ it('returns expected value - simplified 1 team ranking', () => {
             sortable: true,
         },
     }];
-    expect(sveltify([simplifiedRanking2.pop()])).toEqual(expectedResult);
+    expect(sveltifyRow([simplifiedRanking2.pop()])).toEqual(expectedResult);
 });
 
 it('returns expected value - whole ranking', () => {
-    const expectedResult = [{
-        teamName: {
-            key: "teamName",
-            title: "ANAHEIM",
-            value: expect.anything(),
-            sortable: false,
-        },
-        rank: {
-            key: "rank",
-            title: 32,
-            value: expect.anything(),
-            sortable: true,
-        },
-    }];
-
-    expect(sveltify(ranking)).toContainEqual({
+    expect(sveltifyRow(ranking)).toContainEqual({
         rank: {
             key: 'rank',
             sortable: true,

@@ -1,16 +1,21 @@
 
-export function sveltify(data) {
+export function sveltifyRow(data) {
     const accumulator = [];
     let accumulatorObj = {};
     let accumulatorKey = {};
     data.forEach(item => {
         Object.keys(item).forEach(itemKey => {
+            // const fn = getFunction123(itemKey);
+            // console.log(typeof fn);
+            // console.log(fn());
+            // console.log(fn);
             accumulatorKey = {
                 [itemKey]: {
-                    "key": itemKey,
-                    "sortable": Number.isInteger(item[itemKey]),
-                    "title": typeof item[itemKey] === 'string' ? item[itemKey].toUpperCase() : item[itemKey],
-                    value: getFunction(itemKey),
+                    key: itemKey,
+                    sortable: Number.isInteger(item[itemKey]),
+                    title: typeof item[itemKey] === 'string' ? item[itemKey].toUpperCase() : item[itemKey],
+                    'value': getFunction123(itemKey),
+                    // 'value': v => v.rank,
                 }
             };
             accumulatorObj[Object.keys(accumulatorKey)[0]] = accumulatorKey[Object.keys(accumulatorKey)[0]];
@@ -20,6 +25,17 @@ export function sveltify(data) {
         accumulatorObj = {};
     });
     return accumulator;
+}
+
+export function sveltifyColumn(data) {
+   return data.map(item => ({
+        key: item,
+        sortable: false,
+        // sortable: Number.isInteger(item),
+        title: typeof item === 'string' ? item.toUpperCase() : item,
+        // value: v => v.rank,
+        value: getFunction123(item),
+    }));
 }
 
 // TODO
@@ -38,7 +54,7 @@ export function sveltify(data) {
 // Add css class:
 // class: "text-center"
 
-function getFunction(itemKey) {
+function getFunction123(itemKey) {
     switch (itemKey) {
         case 'rank':
             return v => v.rank;

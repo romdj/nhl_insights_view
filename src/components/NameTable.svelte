@@ -1,7 +1,7 @@
-<script>
+<!-- <script>
   import SvelteTable from "svelte-table";
   import faker from "https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js";
-  faker.seed(5);
+  faker.seed(100);
 
   let sortBy = "id";
   let sortOrder = 1;
@@ -108,4 +108,4 @@
       classNameThead={['table-primary']}
       classNameSelect={['custom-select']} />
   </div>
-</div>
+</div> -->
