@@ -4,7 +4,6 @@
   import Counter from "./lib/Counter.svelte";
   import Ranking from "./components/Ranking.svelte";
 </script>
-  <!-- // import NameTable from "./components/NameTable.svelte"; -->
 
 <main>
   <div>
@@ -19,17 +18,9 @@
   <div>
     <Ranking />
   <div>
-<!--
-  </div> 
-    <NameTable />
-  </div> 
--->
   <div class="card">
     <Counter />
   </div>
-<!--
--->
- 
   <p>
     Check out
     <a
