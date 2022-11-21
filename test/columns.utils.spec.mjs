@@ -3,12 +3,12 @@ import { sveltifyColumn } from '../src/functions/utils';
 import keys from './data/rankingKeys.json';
 
 
-it('returns expected value', () => {
+it.only('returns expected value', () => {
     const expectedResult = [{
         key: "rank",
         title: "RANK",
         value: expect.anything(),
-        sortable: false,
+        sortable: true,
     }];
     expect(sveltifyColumn([keys[0]])).toEqual(expectedResult);
 });
@@ -18,7 +18,7 @@ it('returns expected value - simplified 1 team ranking', () => {
         key: "rank",
         title: "RANK",
         value: expect.anything(),
-        sortable: false,
+        sortable: true,
     },
     {
         key: "teamName",
@@ -33,7 +33,7 @@ it('returns expected value - whole ranking', () => {
     const expectedResult = [
         {
           key: 'rank',
-          sortable: false,
+          sortable: true,
           title: 'RANK',
           value: expect.anything(),
         },
@@ -45,31 +45,31 @@ it('returns expected value - whole ranking', () => {
         },
         {
           key: 'GP',
-          sortable: false,
+          sortable: true,
           title: 'GP',
           value: expect.anything(),
         },
         {
           key: 'OfficialW',
-          sortable: false,
+          sortable: true,
           title: 'OFFICIALW',
           value: expect.anything(),
         },
         {
           key: 'RL',
-          sortable: false,
+          sortable: true,
           title: 'RL',
           value: expect.anything(),
         },
         {
           key: 'OTL',
-          sortable: false,
+          sortable: true,
           title: 'OTL',
           value: expect.anything(),
         },
         {
           key: 'PTS',
-          sortable: false,
+          sortable: true,
           title: 'PTS',
           value: expect.anything(),
         },
@@ -81,25 +81,25 @@ it('returns expected value - whole ranking', () => {
         },
         {
           key: 'RW',
-          sortable: false,
+          sortable: true,
           title: 'RW',
           value: expect.anything(),
         },
         {
           key: 'ROW',
-          sortable: false,
+          sortable: true,
           title: 'ROW',
           value: expect.anything(),
         },
         {
           key: 'GF',
-          sortable: false,
+          sortable: true,
           title: 'GF',
           value: expect.anything(),
         },
         {
           key: 'GoalsAgainst',
-          sortable: false,
+          sortable: true,
           title: 'GOALSAGAINST',
           value: expect.anything(),
         },
@@ -111,19 +111,19 @@ it('returns expected value - whole ranking', () => {
         },
         {
           key: 'HOME',
-          sortable: false,
+          sortable: true,
           title: 'HOME',
           value: expect.anything(),
         },
         {
           key: 'AWAY',
-          sortable: false,
+          sortable: true,
           title: 'AWAY',
           value: expect.anything(),
         },
         {
           key: 'S/O',
-          sortable: false,
+          sortable: true,
           title: 'S/O',
           value: expect.anything(),
         },
