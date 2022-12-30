@@ -68,8 +68,8 @@ function getValueFunction(itemKey) {
             return v => v.OTL;
         case 'PTS':
             return v => v.PTS;
-        case 'P':
-            return v => v.P;
+        case 'P%':
+            return v => v['P%'];
         case 'RW':
             return v => v.RW;
         case 'ROW':
@@ -84,8 +84,8 @@ function getValueFunction(itemKey) {
             return v => v.HOME;
         case 'AWAY':
             return v => v.AWAY;
-        case 'S':
-            return v => v.S;
+        case 'S/O':
+            return v => v['S/O'];
         case 'Last10':
             return v => v.Last10;
         case 'Streak':
